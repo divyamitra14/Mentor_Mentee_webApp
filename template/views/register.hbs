@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap" rel="stylesheet">
+
+    <title>Student Details</title>
+</head>
+<style>
+    body{
+        background-image: linear-gradient(#380036, #844eae);
+    }
+    .main{
+        margin-top: 5%;
+        margin-bottom: 5%;
+
+    }
+    .card-title{
+        font-family: "Reem Kufi Fun", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;
+
+    }
+    .head{
+        margin-right: 80%;
+        margin-bottom: 1%;
+        font-family: "Reem Kufi Fun", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;
+
+    }
+    .lable{
+        font-weight: bold;
+    }
+    .i-box{
+        width: 70%;
+        margin-right: 80%;
+    }
+    .i-head{
+        margin-right: 90%;
+        font-weight: bold;
+    }
+    .i-select{
+        width: 30%;
+    }
+    .image{
+        height: 200px ;
+        width:200px ;
+        margin-left: 50%;
+        margin-top: -2%;
+    }
+    .i-ed{
+        width: 30%;
+        margin-right: 80%;
+    }
+    .btn{
+        width: 10%;
+        color: #ffffff;
+        background: #0a53be;
+        /*margin-left: 80%;*/
+    }
+    .btn:hover
+    {
+        background: green;
+        color: white;
+    }
+    .icon{
+
+        margin-right: -0.15%;
+        position: absolute;
+        right: 1250px;
+        top: 8.25%;
+        font-size: 25px;
+    }
+    .icon1{
+        margin-right: -0.15%;
+        position: absolute;
+        right: 1250px;
+        top: 37.95%;
+        font-size: 25px;
+    }
+    .icon2{
+        margin-left: -1%;
+        position: absolute;
+        right: 1250px;
+        top: 72.95%;
+        font-size: 25px;
+    }
+
+</style>
+<body>
+<center>
+    <div class="card main" style="width: 82rem;">
+        <div class="card-body">
+            <form method="post" action="/save" id="registrationForm" enctype="multipart/form-data">
+            <h5 class="card-title"> STUDENT &nbsp; REGISTRATION &nbsp; FORM</h5>
+            <p>This form allows you to register for the Mentor-Mentee Program!
+                This program connects students with experienced mentors to provide guidance, support.</p>
+            <p> fill your information correctly and check it before submitting.</p>
+            <label class="head" style="margin-right: 79%;">PERSONAL &nbsp; DETAILS </label>
+                <i class='bx bxs-user-circle icon' ></i>
+            <div class="card" style="width: 78rem;">
+                <div class="card-body">
+                    <table style="width: 75rem" >
+                        <tr>
+                            <td>
+                                <label class="lable" > Name</label>
+                                <input class="form-control i-box" type="text" id="name" name="user_name" required>
+                                <br>
+                                <label class="lable" > Email</label>
+                                <input class="form-control i-box" type="email" id="email" name="user_email" required>
+                                <br>
+                                <label class="lable"> Phone</label>
+                                <input class="form-control i-box" type="tel" id="phone" name="phone" maxlength="10" required>
+                                <br>
+                                <label class="lable">Local Address</label>
+                                <textarea class="form-control i-box" name="Address"></textarea>
+                            </td>
+                            <td>
+                                <label class="lable">Gender</label>
+                                <div class="gender">
+                                    <input type="radio" id="Female" name="Gender" value="Female" >
+                                    <label for="Female">Female</label> &nbsp;
+                                    <input type="radio" id="male" name="Gender" value="Male" >
+                                    <label for="male">Male</label>
+                                </div>
+                                <br>
+                                <label class="lable"> University Roll Number</label>
+                                <input class="form-control i-box" type="text" name="roll">
+                                <br>
+                                <label class="lable"> Branch</label>
+                                <select CLASS="form-control i-select" id="branch" name="branch" required>
+                                    <option value="Btech CSE">Btech CSE</option>
+                                    <option value="Btech CIVIL">Btech CIVIL</option>
+                                    <option value="Btech AI-ML">Btech AI-ML</option>
+                                    <option value="Btech BIO-TECH">Btech BIO-TECH</option>
+                                    <option value="Btech MECH">Btech MECH</option>
+                                    <option value="Btech ECE">Btech ECE</option>
+                                    <option value="BCA (HONS)">BCA (HONS)</option>
+                                    <option value="BCA (BFSI)">BCA (BFSI)</option>
+                                    <option value="BCA (GA)">BCA (GA)</option>
+                                </select>
+                                <br>
+                                <label class="lable"> Section</label>
+                                <select CLASS="form-control i-select" id="sec" name="section" required>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="G">G</option>
+                                    <option value="H">H</option>
+                                </select>
+                            </td>
+                            <td>
+                                <img src="/image/user.png" class="image">
+                                <br><br>
+                                <label style="font-weight: bold;margin-left: 50%">Upload Profile Photo</label>
+                                <input style="width: 50%;margin-left: 50%" class="form-control " type="file" id="images" name="image" accept=".jpg, .png , .JPEG" required>
+
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br><br>
+            <label class="head">PARENTS &nbsp; DETAILS </label>
+                <i class='bx bx-user-plus icon1' ></i>
+            <div class="card" style="width: 78rem;">
+                <div class="card-body">
+                    <table style="width: 75rem">
+                        <tr>
+                            <td>
+                                <label class="lable">Father's Name</label>
+                                <input class="form-control i-box" type="text" id="fname" name="FatherName" required>
+                                <br>
+                                <label class="lable">Father's Email</label>
+                                <input class="form-control i-box" type="email" id="femail" name="FatherEmail" required>
+                                <br>
+                                <label class="lable">Father's Phone</label>
+                                <input class="form-control i-box" type="tel" id="fphone" maxlength="10" name="FatherPhone" required>
+                                <br>
+                                <label class="lable">Father's Occupation</label>
+                                <select CLASS="form-control i-select" id="focc" name="FatherOcc" required>
+                                    <option value="Defence">Defence</option>
+                                    <option value="Private service">Private service</option>
+                                    <option value="Govt service">Govt service</option>
+                                    <option value="Homemaker">Homemaker</option>
+                                    <option value="Business">Business</option>
+                                </select>
+                                <br>
+                            </td>
+                            <td>
+                                <label class="lable">Mother's Name</label>
+                                <input class="form-control i-box" type="text" id="mname" name="MotherName" required>
+                                <br>
+                                <label class="lable">Mother's Email</label>
+                                <input class="form-control i-box" type="email" id="memail" name="MotherEmail" required>
+                                <br>
+                                <label class="lable">Mother's Phone</label>
+                                <input class="form-control i-box" type="tel" id="mphone" maxlength="10" name="MotherPhone" required>
+                                <br>
+                                <label class="lable">Mother's Occupation</label>
+                                <select CLASS="form-control i-select" id="mocc" name="MotherOcc" required>
+                                    <option value="Defence">Defence</option>
+                                    <option value="Private service">Private service </option>
+                                    <option value="Govt service">Govt service</option>
+                                    <option value="Homemaker">Homemaker</option>
+                                    <option value="Business">Business</option>
+                                </select>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                    <label class="i-head" >Parent Address</label>
+                    <textarea style="width: 35%;margin-right: 80%;" class="form-control" name="ParentAddress"></textarea>
+                </div>
+            </div>
+            <br><br>
+            <label class="head" style="margin-right: 79%;"> EDUCATION &nbsp; DETAILS</label>
+                <i class='bx bxs-graduation icon2' ></i>
+            <div class="card" style="width: 78rem;">
+                <div class="card-body">
+                    <label class="i-head"> Xth Percentage</label>
+                    <input class="form-control i-ed" type="number" id="x" name="Xth" required>
+                    <br>
+
+                    <label style="margin-right: 89%;font-weight: bold"> XIIth Percentage</label>
+                    <input class="form-control i-ed" type="number" id="xii" name="XIIth" required>
+                </div>
+            </div>
+                <br>
+                <div style="margin-right: 80%;font-weight: bold">
+                <lable >Create A strong Password:</lable>
+                <input style="width: 75%" class="form-control" type="password" name="password" placeholder="Password" required>
+                </div>
+            <br>
+            <p class="para"><input name="checkbox" value="true" type="checkbox" required> I hereby declare that the information furnished above is true, complete and correct to the best of my knowledge and belief. </p>
+                <input class="form-control btn" type="submit" value="SUBMIT">
+                <input class="form-control btn" type="button" value="Reset" onclick="resetForm()">
+
+            </form>
+        </div>
+    </div>
+</center>
+<script>
+    function resetForm() {
+        document.getElementById("registrationForm").reset();
+    }
+</script>
+</body>
+</html>

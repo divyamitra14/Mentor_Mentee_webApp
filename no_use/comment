@@ -1,0 +1,20 @@
+// updating the value in the admin panel
+//authentication of the admin login page
+//saving the admin user and password in mongodb
+//rendering of admin login page
+// Redirect to admin page on successful login
+// Check password
+//user login authentication
+// finding(storing) the registered data in the admin panel
+// fetching the data from registration form
+//rendering registration page
+ //rendering student login page
+// res.send("You are already Registered ");
+
+
+// login.use("/uploads", express.static(path.join(__dirname, 'uploads')));
+// const upload = multer({ dest: "uploads/" });
+// const image=req.file ? req.file.filename : null;
+// image:image,
+
+<!--            <td><img src="/uploads/{{this.image}}" alt="Profile Photo" width="100"></td>-->

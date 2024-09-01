@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap" rel="stylesheet">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            /*background-image: linear-gradient(#e19adf, #844eae);*/
+        }
+
+        h1 {
+            /*color: white;*/
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            color: #333;
+            font-family: "Reem Kufi Fun", sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #66b3ff; /* Blue border */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 5%;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            font-size: 14px;
+            width: 10%;
+
+        }
+
+        th {
+            /*background-color: #f2f2f2; !* Light gray background *!*/
+            background-color: #aeaee7;
+            color: #333;
+            width: 10%;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light gray background for even rows */
+        }
+
+        tbody tr:hover {
+            background-color: #e6f9ff; /* Light blue background on hover */
+        }
+
+        /* Center the text in the Gender column header */
+        th:nth-child(8) {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Student Details</h1>
+<table>
+    <thead>
+    <tr>
+        <th>TimeStamp</th>
+        <th> Student_Name</th>
+        <th> Student_Email </th>
+        <th> Student Phone No</th>
+        <th>Local Address</th>
+        <th>Gender</th>
+        <th>Roll No</th>
+        <th>Branch</th>
+        <th>Section</th>
+        <th>Profile Picture</th>
+        <th>Father's Name</th>
+        <th>Father's Phone No</th>
+        <th>Father's Mail ID</th>
+        <th>Father's Occupation</th>
+        <th>Mother's Name</th>
+        <th>Mother's Phone No</th>
+        <th>Mother's Mail ID</th>
+        <th>Mother's Occupation</th>
+        <th>Parent's Address</th>
+        <th>Class X Percentage</th>
+        <th>Class XII Percentage</th>
+        <th>Declaration</th>
+        <th>Date</th>
+        <th>Mentoring Details</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {{#each register}}
+        <tr>
+            <form method="post" action="/update" >
+            <input name="id" hidden="hidden" type="text" value="{{this._id}}" >
+            <td>{{this.timestamp}}</td>
+            <td><input name="u_name" type="text" value="{{this.user_name}}" ></td>
+            <td><input name="u_email" type="text" value="{{this.user_email}}"></td>
+            <td><input name="u_phone" type="tel" value="{{this.phone}}"></td>
+            <td><input name="u_address" type="text" value="{{this.Address}}"></td>
+            <td>{{this.Gender}}</td>
+            <td>{{this.roll}}</td>
+            <td>{{this.branch}}</td>
+            <td>{{this.section}}</td>
+                {{#if image}}
+                    <td>
+                        <img src="upload/{{this.image}}"  alt="Profile Picture" style="max-width: 100px; max-height:100px;">
+                    </td>
+                {{/if}}
+            <td><input name="f_name" type="text" value="{{this.FatherName}}"></td>
+            <td><input name="f_phone" type="tel" value="{{this.FatherPhone}}"></td>
+            <td><input name="f_email" type="text" value="{{this.FatherEmail}}"></td>
+            <td>{{this.FatherOcc}}</td>
+            <td><input name="m_name" type="text" value="{{this.MotherName}}"></td>
+            <td><input name="m_phone" type="tel" value="{{this.MotherPhone}}"></td>
+            <td><input name="m_email" type="text" value="{{this.MotherEmail}}"></td>
+            <td>{{this.MotherOcc}}</td>
+            <td><input name="p_address" type="text" value="{{this.ParentAddress}}"></td>
+            <td><input name="u_10" type="number" value="{{this.Xth}}"></td>
+            <td><input name="u_12" type="number" value="{{this.XIIth}}"></td>
+            <td>{{this.checkbox}}</td>
+            <td><input name="date" type="text" value="{{this.date}}"></td>
+            <td><input name="mentoring_details" type="text" value="{{this.mentoring_details}}"></td>
+            <td> <input class="form-control" style="background-color: #0d6efd;color: white" type="submit" value="update"></td>
+            </form>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+</body>
+</html>
